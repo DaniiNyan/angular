@@ -1,1 +1,3 @@
-<p [ngStyle]="{backgroundColor: getColor()}">ServerID: {{ serverId }} | ServerStatus: {{ getServerStatus() }}</p>
+<p [ngStyle]="{backgroundColor: getColor()}"
+ [ngClass]="{running: isRunning()}"
+>ServerID: {{ serverId }} | ServerStatus: {{ getServerStatus() }}</p>

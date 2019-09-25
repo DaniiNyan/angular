@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-server',
-  templateUrl: './server.component.html'
+  templateUrl: './server.component.html',
+  styleUrls: ['./server.component.css']
 })
 export class ServerComponent {
   serverId: number = 52;
@@ -18,5 +19,9 @@ export class ServerComponent {
 
   getColor() {
     return this.serverStatus === 'running' ? 'dodgerblue' : 'pink';
+  }
+
+  isRunning() {
+    return this.serverStatus === 'running'; 
   }
 }
