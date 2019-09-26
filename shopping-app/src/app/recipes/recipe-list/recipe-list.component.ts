@@ -14,10 +14,8 @@ export class RecipeListComponent implements OnInit {
 
     new Recipe('Second Recipe',
     'The second recipe from this app',
-    'https://www.maxpixel.net/static/photo/1x/Food-Kitchen-Meals-Home-Made-Dishes-Recipe-Bio-1175493.jpg')
+    'https://www.seriouseats.com/2019/07/20190618-grilled-turkish-chicken-wings-vicky-wasik-13-1500x1125.jpg')
   ];
-
-  testName = 'testing'
 
   constructor() { }
 
