@@ -1,29 +1,31 @@
-<div class="jumbotron">
-  <div class="row">
-    <div class="col-sm-6">
-      <app-progress></app-progress>
-    </div>
-    <div class="col-sm-6">
-      <app-attempts></app-attempts>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <h6 class="bold-title margin-title"> Traduza a seguinte frase: </h6>
-      <p> Default phrase. </p>
-      <div class="form-group">
-        <textarea name="answer" id="answer" rows="3" class="form-control">
-      </textarea>
+<app-section>
+  <div class="jumbotron">
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <app-progress></app-progress>
+      </div>
+      <div class="col-sm-6">
+        <app-attempts></app-attempts>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col d-flex justify-content-end">
-      <button type="button" class="btn btn-primary"> Validar Resposta </button>
+    <div class="row">
+      <div class="col">
+        <h6 class="bold-title margin-title"> Traduza a seguinte frase: </h6>
+        <p> Default phrase. </p>
+        <div class="form-group">
+          <textarea name="answer" id="answer" rows="3" class="form-control">
+      </textarea>
+        </div>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-end">
+        <button type="button" class="btn btn-primary"> Validar Resposta </button>
+      </div>
+    </div>
+
   </div>
-
-
-</div>
+</app-section>
