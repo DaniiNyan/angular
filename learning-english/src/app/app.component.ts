@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameResult } from './shared/result.enum';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'learning-english';
+  title: string;
+  gameInProgress: boolean;
+  gameResult: GameResult;
 
-  onFinishGame(result: string) {
-    console.log(result);
+  constructor() {
+    this.title = 'learning-english';
+    this.gameInProgress = true;
+  }
 
+  onFinishGame(result: GameResult) {
+    this.gameInProgress = false;
+    this.gameResult = result;
+  }
+
+  resetGame() {
+    this.gameInProgress = true;
+    this.gameResult = null;
+  }
+
+  get isWin(): boolean {
+    return this.gameResult === GameResult.WIN;
+  }
+
+  get isDefeat(): boolean {
+    return this.gameResult === GameResult.DEFEAT;
   }
 }

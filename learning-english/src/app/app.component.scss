@@ -1,0 +1,12 @@
+.message {
+    font-size: 50px;
+    margin: 100px;
+
+    &-victory {
+        color: #99ce28;
+    }
+
+    &-defeat {
+        color: red;
+    }
+}

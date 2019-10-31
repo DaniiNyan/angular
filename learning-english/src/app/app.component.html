@@ -1,3 +1,23 @@
 <app-header></app-header>
-<app-panel (finishGame)="onFinishGame($event)"></app-panel>
+<app-panel *ngIf="gameInProgress; else finishedGame" (finishGame)="onFinishGame($event)">
+</app-panel>
 
+<ng-template #finishedGame>
+    <div class="jumbotron">
+        <div class="row message">
+            <div class="col d-flex justify-content-center">
+                <h3 *ngIf="isWin" class="message-victory">
+                    Você ganhou!
+                </h3>
+                <h3 *ngIf="isDefeat" class="message-defeat">
+                    Você perdeu!
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <button class="btn btn-primary" (click)="resetGame()">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
