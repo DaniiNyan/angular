@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SENTENCES_MOCK } from '../shared/sentences.mock';
 import { Sentence } from '../shared/sentence.model';
 import { Attempt } from '../shared/attempt.model';
+import { gameResult } from '../shared/result.enum';
 
 @Component({
   selector: 'app-panel',
@@ -15,10 +16,12 @@ export class PanelComponent implements OnInit {
   public remainingHearts = 3;
   private round = 0;
 
+  @Output()
+  finishGame = new EventEmitter<gameResult>();
+
   constructor() { }
 
   ngOnInit() {
-    console.log(SENTENCES_MOCK);
   }
 
   onUpdateAnswer(answer: string) {
@@ -31,13 +34,13 @@ export class PanelComponent implements OnInit {
       this.round++;
 
       if(this.round === SENTENCES_MOCK.length) {
-        alert('Você ganhou!')
+        this.finishGame.emit(gameResult.WIN);
       }
 
     } else {
       this.remainingHearts--;
       if (this.remainingHearts === -1) {
-        alert('Você perdeu!');
+        this.finishGame.emit(gameResult.DEFEAT);
       }
     }
   }
