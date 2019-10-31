@@ -29,13 +29,17 @@ export class PanelComponent implements OnInit {
     if (this.currentAnswer === this.currentQuestion.portuguese) {
       this.currentAnswer = '';
       this.round++;
+
+      if(this.round === SENTENCES_MOCK.length) {
+        alert('Você ganhou!')
+      }
+
     } else {
       this.remainingHearts--;
-
       if (this.remainingHearts === -1) {
         alert('Você perdeu!');
       }
-    } 
+    }
   }
 
   get currentQuestion() {
