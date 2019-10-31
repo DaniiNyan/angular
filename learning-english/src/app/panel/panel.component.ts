@@ -23,18 +23,20 @@ export class PanelComponent implements OnInit {
     this.currentAnswer = answer;
   }
 
-  get currentQuestion() {
-    return SENTENCES_MOCK[this.round];
-  }
-
   validateAnswer() {
     if (this.currentAnswer === this.currentQuestion.portuguese) {
       this.currentAnswer = '';
       this.round++;
     } else {
       alert('Errou');
-    }
-    
-    
+    } 
+  }
+
+  get currentQuestion() {
+    return SENTENCES_MOCK[this.round];
+  }
+
+  get progress() {
+    return (this.round * 100) / SENTENCES_MOCK.length;
   }
 }
