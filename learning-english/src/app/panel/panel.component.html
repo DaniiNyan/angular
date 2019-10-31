@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col">
         <h6 class="bold-title margin-title"> {{ instruction }} </h6>
-        <p> {{ currentQuestion }} </p>
+        <p> {{ currentQuestion.english }} </p>
         <div class="form-group">
           <textarea (input)="onUpdateAnswer($event.target.value)" [value]="currentAnswer" name="answer" id="answer" rows="3" class="form-control">
       </textarea>
@@ -23,7 +23,7 @@
 
     <div class="row">
       <div class="col d-flex justify-content-end">
-        <button type="button" class="btn btn-primary"> Validar Resposta </button>
+        <button (click)="validateAnswer()" type="button" class="btn btn-primary"> Validar Resposta </button>
       </div>
     </div>
 
