@@ -1,3 +1,1 @@
-<img [src]="fullHeart"/>
-<img [src]="fullHeart"/>
-<img [src]="emptyHeart"/>
+<img *ngFor="let attempt of attempts" [src]="attempt.url"/>

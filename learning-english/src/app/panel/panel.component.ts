@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SENTENCES_MOCK } from '../shared/sentences.mock';
 import { Sentence } from '../shared/sentence.model';
+import { Attempt } from '../shared/attempt.model';
 
 @Component({
   selector: 'app-panel',
@@ -11,6 +12,7 @@ export class PanelComponent implements OnInit {
 
   public instruction = 'Traduza a frase:'
   public currentAnswer = '';
+  public remainingHearts = 3;
   private round = 0;
 
   constructor() { }
@@ -28,7 +30,11 @@ export class PanelComponent implements OnInit {
       this.currentAnswer = '';
       this.round++;
     } else {
-      alert('Errou');
+      this.remainingHearts--;
+
+      if (this.remainingHearts === -1) {
+        alert('Você perdeu!');
+      }
     } 
   }
 
