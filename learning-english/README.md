@@ -1,27 +1,17 @@
 # LearningEnglish
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+A simple learning english-portuguese application.
 
-## Development server
+## How it works?
+First you must run the application.  
+1. Download this project:  
+`git clone https://github.com/DaniiNyan/angular.git`
+2. Navigate to the directory where the project was downloaded and run this command:  
+`ng serve`  
+3. The project must be running on `http://localhost:4200/`.  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In your browser, try to translate the sentence above the text area and click on `Validar Resposta`. If your answer is right, you'll go to the next sentence. If you fail, you'll lose one heart. The game ends when you pass through all sentences or when you lose all your hearts.
 
-## Code scaffolding
+## Customization
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Add as many sentences you want on `sentences.mocks.ts` file inside `src/app/shared` directory. You just have to follow the pattern to get it working.
